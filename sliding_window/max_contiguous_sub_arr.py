@@ -17,5 +17,5 @@ def max_contiguous_sum(arr, k):
 
 
 
-print(max_contiguous_sum([2,1,5,1,3,2], 3))
-print(max_contiguous_sum([2, 3, 4, 1, 5], 2))
+print(max_contiguous_sum([2,1,5,1,3,2], 3), 9)
+print(max_contiguous_sum([2, 3, 4, 1, 5], 2), 7)

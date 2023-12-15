@@ -27,63 +27,25 @@ if len(key_letters) < k:
 
     
 
-solution number 2:
+solution a 2:
 
 - use hash map to solve this.
 """
 def solution(s, k):
-    # start_pos = 0
-    # second_pointer = 0
-    # longest_substring = 0
-    # substring_dict = {}
-    # print(arr)
-    # characters = []
-    window_start = 0
-    max_length = 0
+    start_pos = 0
     characters = {}
-    for i, value in enumerate(s):
-        characters[value] = characters.get(value, 0) + 1
-
+    max_len = 0
+    for i, v in enumerate(s):
+        characters[v] = characters.get(v, 0) + 1
         while len(characters) > k:
-            characters[s[window_start]] -= 1
-
-            if characters[s[window_start]] == 0:
-                del characters[s[window_start]]
-            
-
-            window_start += 1
-            max_length = max(max_length, i - window_start + 1)
-        
-    return max_length
+            characters[s[start_pos]] -= 1
+            if characters[s[start_pos]] == 0:
+                del characters[s[start_pos]]
+            start_pos += 1
+        max_len = max(max_len,i - start_pos+1)
+    return max_len
 
 
-    #     if v in substring_dict.keys() and len(substring_dict.keys()) <= k and substring_dict[]:
-    #         substring_dict[v] = 1
-    #     if len(substring_dict.keys()) >= k:
-    #         print('we have reaached k distinct characters')
-    #         break
-        
-    #     else:
-    #         substring_dict[v] = 1
-    #         # longest_substring = max(longest_substring, len(substring))
-    #         start_pos += 1
-    #     print(v, substring_dict)
-    #     # longest_substring = max(longest_substring, len(substring))
-    # print(longest_substring)
-    #     # print(i)
-        
-        # print(substring)
-    #     print()
-    # distinct_chars = []
-    # len_of_sub_arr = 0
-    # for i, v in enumerate(arr):
-    #     if v in distinct_chars:
-    #         len_of_sub_arr += 1
-            
-    #     else:
-    #         distinct_chars.append(v)
-    #         if len(distinct_chars) == k:
-
-
-print(solution('araaci' , k =2))
-print(solution('abcdeffg' , k =3))
+print(solution('araaci' , k =2), 4)
+print(solution('abcdeffg' , k =3), 4)
+print(solution('cbbebi', k=3), 5)
