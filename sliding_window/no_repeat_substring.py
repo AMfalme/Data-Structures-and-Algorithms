@@ -1,4 +1,5 @@
-# Given a string, find the length of the longest substring which has no repeating characters.
+# Given a string, find the length of the longest substring
+# which has no repeating characters.
 
 # input = 'aabccbb
 # output = 3
