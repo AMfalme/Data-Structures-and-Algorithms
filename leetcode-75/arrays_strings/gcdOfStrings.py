@@ -11,11 +11,14 @@ def gcdOfStrings(str1, str2):
         sub_str = str1[:i]
         sub_str_len = len(sub_str)
         
-        if str1_len%sub_str_len or str2_len%sub_str_len:
-            pass
-        else:
+        if str1_len%sub_str_len == 0 and str2_len%sub_str_len == 0:
+        
             div1, div2 = str1_len//sub_str_len, str2_len//sub_str_len
             if sub_str * div1 == str1 and sub_str * div2 == str2:
                 return sub_str
     return ""
 print(gcdOfStrings('ABCABC', 'ABC'))
+print(gcdOfStrings(
+    'ABABABAB',
+    'ABAB'
+))
